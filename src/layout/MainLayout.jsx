@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 
 function MainLayout() {
     return (
-        <div className="max-w-7xl mx-auto h-fit">
+        <div className="max-w-[1400px] mx-auto h-fit">
             <header>
                 <NavBar> </NavBar>
             </header>

@@ -32,7 +32,7 @@
 
 
 .title {
-    @apply md:text-3xl text-[22px] font-bold
+    @apply md:text-3xl text-[22px] font-bold  bg-gradient-to-r from-[#632EE3] to-orange-900 bg-clip-text text-transparent
 }
 
 .sub-title {
