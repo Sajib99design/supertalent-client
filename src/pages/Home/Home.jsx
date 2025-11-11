@@ -116,7 +116,7 @@ function Home() {
                 <TopCategories></TopCategories>
             </section>
 
-            {/* ---------- About Platform Section ---------- */}
+            {/* ---------- About Platform Section ----------- */}
             <section className="mx-auto mt-20  bg-gradient-to-l from-[#632EE3]/10 to-orange-900/10 md:py-16  py-6 ">
                 <div className="grid md:grid-cols-2 gap-10 items-center md:px-10 px-3">
                     <img
