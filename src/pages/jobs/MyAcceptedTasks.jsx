@@ -89,7 +89,7 @@ const MyAcceptedTasks = () => {
           {tasks.map((task) => (
             <div
               key={task._id}
-              className="bg-white shadow-md rounded-2xl  border border-gray-100 flex flex-col justify-between md:w-[32%]"
+              className="bg-white shadow-md   border border-gray-100 flex flex-col justify-between md:w-[32%] hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-md"
             >
 
               {/* Image */}

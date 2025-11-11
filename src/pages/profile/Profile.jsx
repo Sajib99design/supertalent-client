@@ -55,13 +55,13 @@ const Profile = () => {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold text-dark-700 mb-6 text-center">
+      <h2 className="title mb-6 text-center">
         My Profile
       </h2>
 
-      <div className="bg-white shadow-md rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8">
+      <div className="bg-white border-orange-800 border shadow-md rounded-2xl p-8 md:flex flex-col md:flex-row items-center gap-8">
         {/* User Photo */}
-        <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-green-200">
+        <div className="w-48 h-48 rounded-full mx-auto overflow-hidden border-4 border-green-200">
           <img
             src={user?.photoURL || "https://via.placeholder.com/150"}
             alt={user?.displayName}
@@ -70,7 +70,7 @@ const Profile = () => {
         </div>
 
         {/* User Info & Update Form */}
-        <form onSubmit={handleUpdate} className="flex-1 space-y-4">
+        <form onSubmit={handleUpdate} className="profile md:flex-1 space-y-4">
           <div>
             <label className="block text-dark-800 font-medium mb-1">
               Name
@@ -79,7 +79,7 @@ const Profile = () => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full border border-green-200 rounded-lg p-3 focus:outline-none focus:border-green-500"
+              className="w-full border-[1px] border-blue-800 rounded-lg p-3 focus:outline-none focus:border-green-500"
             />
           </div>
 
@@ -91,7 +91,7 @@ const Profile = () => {
               type="text"
               value={photo}
               onChange={(e) => setPhoto(e.target.value)}
-              className="w-full border border-green-200 rounded-lg p-3 focus:outline-none focus:border-green-500"
+              className="w-full border-[1px] border-blue-800 rounded-lg p-3 focus:outline-none focus:border-green-500"
             />
           </div>
 
@@ -103,14 +103,14 @@ const Profile = () => {
               type="email"
               value={user?.email}
               readOnly
-              className="w-full border border-green-200 rounded-lg p-3 bg-gray-100 cursor-not-allowed"
+              className="w-full border-[1px] border-blue-800 rounded-lg p-3 bg-gray-100 cursor-not-allowed"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full btn-primary text-white py-3 rounded-lg hover:bg-green-700 transition"
+            className="w-full btn-primary text-white py-3 rounded-lg  transition hover:text-blue-500 cursor-pointer"
           >
             {loading ? "Updating..." : "Update Profile"}
           </button>

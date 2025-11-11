@@ -42,9 +42,10 @@ p {
     font-family: "Roboto", sans-serif;
 }
 
-.newJob label {
+.newJob label, .profile label {
     @apply font-medium text-blue-800
 }
+
 .newJob input {
     @apply border-[1px] border-blue-800
 }

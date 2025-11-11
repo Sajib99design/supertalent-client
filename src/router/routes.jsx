@@ -3,7 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home/Home";
 import Login from "../Auth/Login";
 import Register from "../Auth/Registration";
-import Profile from "../pages/Home/Profile";
+import Profile from "../pages/profile/Profile";
 import PrivateRoute from "./PrivateRoute";
 
 import AddJobs from "../pages/jobs/AddJobs";
