@@ -1,12 +1,9 @@
-
-
 import React, { useEffect, useState } from "react";
 import Banner from "../../components/Banner";
 import { SuperCard } from "../../components/SuperCard";
 import useAxios from "../../hook/useAxios";
 import useAuth from "../../hook/useAuth";
 import { Bars } from "react-loader-spinner";
-import { Briefcase, Code, PenTool, Layers, ArrowUpRight } from "lucide-react";
 import TopCategories from "./TopCategories ";
 import About from "./About";
 
@@ -66,7 +63,7 @@ function Home() {
             </section>
 
             {/* ---------- About Platform Section ----------- */}
-            <section><About/></section>
+            <section><About /></section>
         </div>
     );
 }

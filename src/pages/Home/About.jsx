@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import ButtonOne from '../../components/ButtonOne';
 
 function About() {
     const ref = useRef(null);
@@ -71,15 +72,15 @@ function About() {
                         next project. Whether you are an employer or freelancer, our
                         platform ensures trust, transparency, and speed.
                     </motion.p>
-
-                    <motion.button
-                        className="mt-4 bg-gradient-to-r from-[#632EE3] to-orange-900 text-white font-semibold py-3 px-6 rounded-full hover:opacity-80 transition"
+                    <motion.div
                         variants={itemVariants}
                         whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }} 
+                        whileTap={{ scale: 0.95 }}
+                        className="transition duration-300"
                     >
-                        Create a Job
-                    </motion.button>
+                        <ButtonOne />
+                    </motion.div>
+
                 </motion.div>
             </div>
         </motion.div>

@@ -1,13 +1,14 @@
-
-
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router';
+import ButtonOne from './ButtonOne';
 
 // Replace with your actual image URL
 const PROFILE_IMAGE_URL = 'https://i.ibb.co.com/5x18sdfv/Screenshot-2.png';
 
 const Banner = () => {
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -38,44 +39,41 @@ const Banner = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.h1
-            className="text-2xl md:text-6xl font-extrabold leading-tight"
-            variants={textItemVariants}
-          >
-            <h2 className="text-blue-900  md:text-6xl  inline text-3xl">
-            Connect Client <br /> With   <span className='bg-gradient-to-l from-[#632EE3] to-orange-900 bg-clip-text text-transparent'> SuperTalents </span>
-            </h2>
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: '80%' }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="h-1 bg-gradient-to-l from-[#632EE3] to-orange-900 mt-1 w-4/5"
-            ></motion.div>
-          </motion.h1>
+          <div className='max-sm:text-center'>
+            <motion.h1 // This is the main animated H1
+              className="text-2xl md:text-6xl font-extrabold leading-tight"
+              variants={textItemVariants}
+            >
+              {/* FIX: Removed the nested <h1>. Combined the classes onto the content within the motion.h1. */}
+              <span className="text-blue-900 md:text-6xl inline text-3xl">
+                Connect Client <br /> With <span className='bg-gradient-to-l from-[#632EE3] to-orange-900 bg-clip-text text-transparent'> SuperTalent </span>
+              </span>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: '80%' }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+                className="max-sm:mx-auto my-3 h-1 bg-gradient-to-l from-[#632EE3] to-orange-900 mt-1 w-4/5"
+              ></motion.div>
+            </motion.h1>
 
-          <motion.p className="text-gray-800 max-w-lg" variants={textItemVariants}>
-          Explore countless job openings and take the next step toward your dream career.
-          One platform. Endless opportunities. Find your dream job now.
-          </motion.p>
+            <motion.p className="text-gray-800 max-w-lg" variants={textItemVariants}>
+              Explore countless job openings and take the next step toward your dream career.
+              One platform. Endless opportunities. Find your dream job now.
+            </motion.p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <motion.button
-              className="flex items-center justify-center px-8 py-3 bg-blue-700 hover:bg-blue-600 rounded-lg text-lg font-semibold transition duration-300 shadow-lg shadow-blue-700/50"
+            <motion.div
               variants={textItemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="transition duration-300"
             >
-              Find a job
-            </motion.button>
-            <motion.button
-              className="flex items-center justify-center px-8 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg text-lg font-semibold transition duration-300"
-              variants={textItemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Create a Job
-            </motion.button>
+              <ButtonOne />
+            </motion.div>
           </div>
+
+
         </motion.div>
 
         {/* ---------- Right Image/Card Section (Animated) ---------- */}
@@ -94,7 +92,7 @@ const Banner = () => {
             <div className="absolute inset-0 rounded-2xl border-4 border-green-500/50 transform translate-x-2 translate-y-2"></div>
             <div className="absolute inset-0 rounded-2xl border-4 border-purple-700/50 transform -translate-x-2 -translate-y-2"></div>
 
-            <div className="relative rounded-xl overflow-hidden shadow-xl  w-72 h-72 ">
+            <div className="relative rounded-xl overflow-hidden shadow-xl w-72 h-72 ">
               <img
                 src={PROFILE_IMAGE_URL}
                 alt="Profile of a UI/UX designer"
