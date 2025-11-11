@@ -49,7 +49,8 @@ const Register = () => {
 
   return (
     <div className="card bg-base-100 w-full mx-auto max-w-sm ">
-      <div className="card-body  shrink-0 shadow-2xl border-l-2 border-l-blue-500 border-r-2 border-r-orange-800 mt-5  transition-all  duration-1000 hover:-translate-y-3">
+      <div className="card-body  shrink-0 shadow-2xl md:border-l-2 md:border-l-blue-500 md:border-r-2 md:border-r-orange-800 mt-5">
+
         <h1 className="title text-center">Register</h1>
         <form onSubmit={handleRegister}>
           <fieldset className="fieldset">

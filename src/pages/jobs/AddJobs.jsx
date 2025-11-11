@@ -56,7 +56,7 @@ function AddJobs() {
 
 
     return (
-        <div className="card border-2 border-l-2 border-l-blue-500 border-r-2 border-r-orange-800 bg-base-100 w-full max-w-md mx-auto shadow-2xl mt-5 rounded">
+        <div className="card  border-l-1 border-l-blue-500 border-r-1 border-r-orange-800 bg-base-100 w-full max-w-md mx-auto shadow-2xl mt-5 rounded">
             <div className="card-body mt-3 p-6 relative">
                 <h2 className="text-2xl font-bold title text-center mb-6">Add New Job</h2>
                 <form onSubmit={handlePostJobs} className=" newJob space-y-4">
