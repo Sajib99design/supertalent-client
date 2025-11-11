@@ -52,3 +52,6 @@ p {
 select option {
     @apply text-orange-800
 }
+.myjobPost th{
+    @apply px-3 sm:px-6 py-3 text-left font-bold text-indigo-800 uppercase tracking-wider
+}

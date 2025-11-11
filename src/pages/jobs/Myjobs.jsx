@@ -56,7 +56,6 @@ const MyJobs = () => {
 
     // Update
     const handleUpdatePost = (job) => {
-        console.log(job);
         navigate(`/updatejob/${job}`)
 
     };
@@ -115,30 +114,30 @@ const MyJobs = () => {
 
     return (
         <div className="min-h-screen bg-gray-100 p-4 sm:p-8 font-inter">
-            <h1 className="text-2xl font-extrabold mb-8 text-center text-blue-1000 tracking-tight">
+            <h1 className="title mb-8 text-center">
                 My Job Posts
             </h1>
 
             <div className="overflow-x-auto bg-white shadow-2xl rounded-2xl border border-gray-200">
-                <table className="min-w-full divide-y divide-gray-200 text-sm">
+                <table className="min-w-full myjobPost divide-y divide-gray-200 text-sm">
                     <thead className="bg-indigo-50">
                         <tr>
-                            <th className="px-3 sm:px-6 py-3 text-left font-bold text-indigo-600 uppercase tracking-wider">
+                            <th className="">
                                 SL
                             </th>
-                            <th className="px-3 sm:px-6 py-3 text-left font-bold text-indigo-600 uppercase tracking-wider">
+                            <th>
                                 Job Title
                             </th>
-                            <th className="px-3 sm:px-6 py-3 text-left font-bold text-indigo-600 uppercase tracking-wider">
+                            <th>
                                 Name & Email
                             </th>
-                            <th className="px-3 sm:px-6 py-3 text-left font-bold text-indigo-600 uppercase tracking-wider">
+                            <th>
                                 Salary
                             </th>
-                            <th className="px-3 sm:px-6 py-3 text-left font-bold text-indigo-600 uppercase tracking-wider">
+                            <th>
                                 Update
                             </th>
-                            <th className="px-3 sm:px-6 py-3 text-center font-bold text-indigo-600 uppercase tracking-wider">
+                            <th>
                                 Actions
                             </th>
                         </tr>
@@ -153,7 +152,7 @@ const MyJobs = () => {
                                 <td className="px-3 sm:px-6 py-4 whitespace-nowrap font-medium text-gray-900">
                                     {index + 1}
                                 </td>
-                                <td className="px-3 sm:px-6 py-4 whitespace-nowrap font-semibold text-gray-700">
+                                <td className="px-3 sm:px-6 py-4 whitespace-nowrap font-semibold text-orange-700">
                                     {Job.title} <br />
                                     {/* {Job.summary} */}
                                 </td>
