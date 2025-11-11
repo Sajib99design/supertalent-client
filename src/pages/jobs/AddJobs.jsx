@@ -56,18 +56,18 @@ function AddJobs() {
 
 
     return (
-        <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto shadow-2xl mt-5 rounded">
+        <div className="card border-2 border-l-2 border-l-blue-500 border-r-2 border-r-orange-800 bg-base-100 w-full max-w-md mx-auto shadow-2xl mt-5 rounded">
             <div className="card-body mt-3 p-6 relative">
                 <h2 className="text-2xl font-bold text-center mb-6">Add New Job</h2>
-                <form onSubmit={handlePostJobs} className="space-y-4">
+                <form onSubmit={handlePostJobs} className=" newJob space-y-4">
                     {/* Title Field */}
-                    <div>
-                        <label className="label font-medium">Title</label>
+                    <div >
+                        <label className="label">Title</label>
                         <input
                             type="text"
                             name="title"
                             required
-                            className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+                            className="input  w-full rounded-full focus:border-0 focus:outline-gray-200"
                             placeholder="Title"
                         />
                     </div>
@@ -92,7 +92,7 @@ function AddJobs() {
                             defaultValue={""}
                             name="category"
                             required
-                            className="select w-full rounded-full focus:border-0 focus:outline-gray-200"
+                            className="select w-full rounded-full focus:border-0 focus:outline-gray-200 border-[1px] border-blue-800 "
                         >
                             <option value="" disabled>Select category</option>
                             <option value="Web">Web Development</option>
@@ -112,8 +112,8 @@ function AddJobs() {
                             name="summary"
                             required
                             rows="3"
-                            className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-[250px]"
-                            placeholder="Enter description"
+                            className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-[250px] border-[1px] border-blue-800 "
+                            placeholder="Enter description "
                         ></textarea>
                     </div>
                     {/* Thumbnail URL */}
