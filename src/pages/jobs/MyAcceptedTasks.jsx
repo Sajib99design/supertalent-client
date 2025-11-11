@@ -27,7 +27,6 @@ const MyAcceptedTasks = () => {
     }
   }, [user, axiosInstanceSecure]);
 
-
   const handleDone = async (id) => {
     try {
       const res = await axiosInstanceSecure.patch(`/acceptedTasks/done/${id}`, {
@@ -76,8 +75,8 @@ const MyAcceptedTasks = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
-      <h2 className="text-3xl font-semibold text-center mb-8">
+    <div className=" mx-auto px-4 py-10">
+      <h2 className="title text-center mb-8">
         My Accepted Jobs
       </h2>
 
@@ -86,46 +85,54 @@ const MyAcceptedTasks = () => {
           You haven’t accepted any task yet.
         </p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="md:flex  justify-center flex-wrap gap-6">
           {tasks.map((task) => (
             <div
               key={task._id}
-              className="bg-white shadow-md rounded-2xl p-5 border border-gray-100 flex flex-col justify-between"
+              className="bg-white shadow-md rounded-2xl  border border-gray-100 flex flex-col justify-between md:w-[32%]"
             >
-              <div>
+
+              {/* Image */}
+              <figure className="h-38 overflow-hidden">
                 <img
                   src={task.coverImage}
                   alt={task.title}
-                  className="w-full h-40 object-cover rounded-xl mb-4"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300 rounded-t-md"
                 />
-                <h3 className="text-xl font-bold mb-2">{task.title}</h3>
-                <p className="text-gray-600 mb-1">
-                  Category: <span className="font-medium">{task.category}</span>
-                </p>
-                <p className="text-gray-600 mb-1">
-                  Payment:{" "}
-                  <span className="font-semibold text-green-600">
-                    ${task.price}
-                  </span>
-                </p>
-                <p className="text-gray-600 mb-3">
-                  Status:{" "}
-                  <span
-                    className={`font-semibold ${task.status === "done"
-                      ? "text-green-600"
-                      : "text-yellow-600"
-                      }`}
-                  >
-                    {task.status}
-                  </span>
-                </p>
+              </figure>
+              <h3 className="text-center sub-title  text-blue-900 my-2">{task.title}</h3>
+
+              <div className="p-3" >
+                <div className="flex justify-between mt-4">
+                  <p className="text-gray-600 flex mb-1">
+                    Payment:{" "}
+                    <span className="font-semibold text-green-600">
+                      ${task.price}
+                    </span>
+                  </p>
+                  <p className="text-gray-600 mb-3">
+                    Status:{" "}
+                    <span
+                      className={`font-semibold ${task.status === "done"
+                        ? "text-green-600"
+                        : "text-yellow-600"
+                        }`}
+                    >
+                      {task.status}
+                    </span>
+                  </p>
+                </div>
+                <div className="flex justify-between  mt-3 border-b-1 border-blue-200 pb-4">
+                  <span className="text-sm text-secondary ">{task.postedBy}</span>
+                  <p className="text-orange-800 text-sm">{task.category}</p>
+                </div>
               </div>
 
-              <div className="flex gap-3 mt-4">
+              <div className="flex gap-3 justify-between my-3 px-3">
                 <button
                   onClick={() => handleDone(task._id)}
                   disabled={task.status === "done"}
-                  className={`flex-1 py-2 rounded-lg text-white font-medium ${task.status === "done"
+                  className={` py-2 text-sm  px-5 rounded-md text-white font-medium ${task.status === "done"
                     ? "bg-green-400 cursor-not-allowed"
                     : "bg-green-600 hover:bg-green-700"
                     }`}
@@ -135,7 +142,7 @@ const MyAcceptedTasks = () => {
 
                 <button
                   onClick={() => handleCancel(task._id)}
-                  className="flex-1 py-2 rounded-lg bg-red-500 text-white font-medium hover:bg-red-600"
+                  className=" text-sm  px-5 rounded-md bg-red-700 text-white font-medium hover:bg-red-600"
                 >
                   ❌ Cancel
                 </button>
