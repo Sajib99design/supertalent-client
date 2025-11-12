@@ -2,7 +2,7 @@
 # Developer
 👨‍💻 Developed by: Sajib Ahmeed
 🌐 Project: SuperTalent
-🌸 programming-hero: 12 batch 
+🌸 programming-hero: 12 batch
 
 
 
@@ -11,12 +11,14 @@ It connects talented professionals with employers by allowing users to **post, b
 
 
 #  Live Preview 🌸
-https:
+Client:  https://super-client-nu.vercel.app
+Server:  https://super-server-mu.vercel.app
+
+
 
 
 # Clone Repository
-
-git clone
+git clone  https://github.com/Sajib99design/supertalent-client.git
 
 
 

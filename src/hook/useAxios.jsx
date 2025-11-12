@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosInstance = axios.create({
-  baseURL: "https://super-server2.vercel.app",
+  baseURL: "https://super-server-mu.vercel.app",
 });
 
 

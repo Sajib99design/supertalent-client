@@ -1,7 +1,7 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 
-import { FaGoogle } from "react-icons/fa6";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
 
 import { AuthContext } from "../provider/AuthContext";
 import toast from "react-hot-toast";
@@ -9,6 +9,8 @@ import toast from "react-hot-toast";
 const Register = () => {
   const { createUser, updateUserProfile, signInWithGoogle } = use(AuthContext);
   const navigate = useNavigate();
+  const [showPass, setShowPass] = useState(false);
+
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -69,6 +71,7 @@ const Register = () => {
             <input
               type="text"
               name="displayName"
+              autoComplete="name"
               className="input rounded-full focus:border-0 focus:outline-gray-200 border-[1px] border-blue-800"
               placeholder="Name"
             />
@@ -77,6 +80,7 @@ const Register = () => {
             <input
               type="text"
               name="photoURL"
+              autoComplete="photo"
               className="input rounded-full focus:border-0 focus:outline-gray-200 border-[1px] border-blue-800"
               placeholder="Photo URL"
             />
@@ -85,17 +89,28 @@ const Register = () => {
             <input
               type="email"
               name="email"
+              autoComplete="email"
               className="input rounded-full focus:border-0 focus:outline-gray-200 border-[1px] border-blue-800"
               placeholder="Email"
             />
             {/* password field */}
-            <label className="label">Password</label>
-            <input
-              type="password"
-              name="password"
-              className="input rounded-full focus:border-0 focus:outline-gray-200 border-[1px] border-blue-800"
-              placeholder="Password"
-            />
+            <div className="relative">
+              <label className="label">Password</label>
+              <input
+                type={showPass ? "text" : "password"}
+                name="password"
+                autoComplete="new-password"
+                className="input rounded-full focus:border-0 focus:outline-gray-200 border-[1px] border-blue-800"
+                placeholder="Enter your password"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPass(!showPass)}
+                className="absolute right-6 top-8 text-purple-600"
+              >
+                {showPass ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
             <div>
               <a className="link link-hover">Forgot password?</a>
             </div>

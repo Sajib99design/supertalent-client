@@ -29,7 +29,6 @@ function AddJobs() {
 
                 if (data.data.insertedId) {
                     Swal.fire({
-                        position: "top-center",
                         icon: "success",
                         title: "Your Post has been saved",
                         showConfirmButton: false,

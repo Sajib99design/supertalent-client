@@ -1,12 +1,14 @@
-import { use } from "react";
+import { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../provider/AuthContext";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
+    const [showPass, setShowPass] = useState(false);
     const { signInUser, signInWithGoogle } = use(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
@@ -52,17 +54,29 @@ const Login = () => {
                         <input
                             type="email"
                             name="email"
+                            autoComplete="email"
                             className="input border-[1px] border-blue-800  rounded-full focus:border-0 focus:outline-gray-200"
                             placeholder="Email"
                         />
 
                         <label className="label">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            className="input border-[1px] border-blue-800 rounded-full focus:border-0 focus:outline-gray-200"
-                            placeholder="Password"
-                        />
+                        <div className="relative">
+                            <input
+                                type={showPass ? "text" : "password"}
+                                name="password"
+                                autoComplete="password"
+                                className="input border-[1px] border-blue-800 rounded-full focus:border-0 focus:outline-gray-200"
+                                placeholder="Enter Your Password"
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowPass(!showPass)}
+                                className="absolute right-6 top-3 text-purple-600"
+                            >
+                                {showPass ? <FaEyeSlash /> : <FaEye />}
+                            </button>
+                        </div>
+
                         <div>
                             <a className="link link-hover">Forgot password?</a>
                         </div>
