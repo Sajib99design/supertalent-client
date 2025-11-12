@@ -59,7 +59,7 @@ const Profile = () => {
         My Profile
       </h2>
 
-      <div className="bg-white border-orange-800 border shadow-md rounded-2xl p-8 md:flex flex-col md:flex-row items-center gap-8">
+      <div className="bg-white dark:bg-[#1e2939] border-orange-800 border shadow-md rounded-2xl p-8 md:flex flex-col md:flex-row items-center gap-8">
         {/* User Photo */}
         <div className="w-48 h-48 rounded-full mx-auto overflow-hidden border-4 border-green-200">
           <img
@@ -103,7 +103,7 @@ const Profile = () => {
               type="email"
               value={user?.email}
               readOnly
-              className="w-full border-[1px] border-blue-800 rounded-lg p-3 bg-gray-100 cursor-not-allowed"
+              className="w-full border-[1px] border-blue-800 rounded-lg p-3 bg-gray-100 dark:bg-gray-500 cursor-not-allowed"
             />
           </div>
 

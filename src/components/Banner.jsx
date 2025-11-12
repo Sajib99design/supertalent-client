@@ -45,8 +45,8 @@ const Banner = () => {
               variants={textItemVariants}
             >
               {/* FIX: Removed the nested <h1>. Combined the classes onto the content within the motion.h1. */}
-              <span className="text-blue-900 md:text-6xl inline text-3xl">
-                Connect Client <br /> With <span className='bg-gradient-to-l from-[#632EE3] to-orange-900 bg-clip-text text-transparent'> SuperTalent </span>
+              <span className="text-blue-900 md:text-6xl inline text-3xl dark:text-purple-500">
+                Connect Client <br /> With <span className='bg-gradient-to-l from-[#632EE3] to-orange-900 bg-clip-text text-transparent   dark:from-purple-500   dark:to-orange-400'> SuperTalent </span>
               </span>
               <motion.div
                 initial={{ width: 0 }}
@@ -56,13 +56,13 @@ const Banner = () => {
               ></motion.div>
             </motion.h1>
 
-            <motion.p className="text-gray-800 max-w-lg" variants={textItemVariants}>
+            <motion.p className="text-gray-700 dark:text-gray-400 max-w-lg" variants={textItemVariants}>
               Explore countless job openings and take the next step toward your dream career.
               One platform. Endless opportunities. Find your dream job now.
             </motion.p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <div className="max-sm:text-center pt-4">
             <motion.div
               variants={textItemVariants}
               whileHover={{ scale: 1.05 }}
@@ -102,7 +102,7 @@ const Banner = () => {
 
             {/* Floating Info Card (Similar to the image) */}
             <motion.div
-              className="absolute bottom-5 -right-10 bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-2xl border border-gray-700 transition-all duration-300 hover:-translate-y-5"
+              className="absolute bottom-5 -right-10 bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-2xl border border-gray-700 transition-all duration-300 hover:-translate-y-5  animate-bounce"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}

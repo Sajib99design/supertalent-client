@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router";
-import { IoLogoModelS } from "react-icons/io";
 import { GoHomeFill } from "react-icons/go";
 import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { FaGear, FaUser } from "react-icons/fa6";
@@ -9,12 +8,25 @@ import { IoPersonAddSharp } from 'react-icons/io5';
 import { use, useEffect, useState } from "react";
 import { AuthContext } from '../provider/AuthContext'
 import { Briefcase, LucidePackageCheck, Plus } from "lucide-react";
+import Logo from "../assets/logo.png"
 
 function NavBar() {
     const { user, signOutUser } = use(AuthContext);
-    console.log(user);
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
+
+    useEffect(() => {
+        const html = document.querySelector('html')
+        html.setAttribute("data-theme", theme)
+        localStorage.setItem("theme", theme)
+    }, [theme])
+
+
+    const handleTheme = (checked) => {
+        setTheme(checked ? "dark" : "light")
+    }
+
     return (
-        <div className="navbar py-0 min-h-0 z-1 shadow-sm  glass-card max-w-7xl">
+        <div className="navbar max-w-[1400px] mx-auto py-0 min-h-0 z-1 shadow-sm  glass-card">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -85,23 +97,23 @@ function NavBar() {
                     </ul>
                 </div>
                 <Link to={"/"} className="flex items-center gap-1 text-xl font-bold">
-                    Super
+                    <img src={Logo} alt="" className="w-[140px]" />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex my-3">
                 <ul className="menu menu-horizontal px-1">
-                    <li className="border-e-1 border-blue-300 text-blue-800">
+                    <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
                         <NavLink to={"/"}>
                             <GoHomeFill />
                             Home
                         </NavLink>
                     </li>
-                    <li className="border-e-1 border-blue-300 text-blue-800">
+                    <li className="border-e-1 border-blue-300 text-blue-800  dark:text-blue-400">
                         <NavLink to="/all-jobs">
                             <Briefcase size={14} /> All Jobs
                         </NavLink>
                     </li>
-                    <li className="border-e-1 border-blue-300 text-blue-800">
+                    <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
                         <NavLink to="/auth/register">
                             <IoPersonAddSharp size={14} /> Register
                         </NavLink>
@@ -110,22 +122,22 @@ function NavBar() {
                         user && (
                             <>
 
-                                <li className="border-e-1 border-blue-300 text-blue-800">
+                                <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
                                     <NavLink to="/add-jobs">
                                         <Plus size={15} />  Add Jobs
                                     </NavLink>
                                 </li>
-                                <li className="border-e-1 border-blue-300 text-blue-800">
+                                <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
                                     <NavLink to="/myjobs">
                                         <ImBoxAdd /> My Jobs
                                     </NavLink>
                                 </li >
-                                <li className="border-e-1 border-blue-300 text-blue-800">
+                                <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
                                     <NavLink to="/myacceptedjobs">
                                         <LucidePackageCheck size={16} /> My Accepted Jobs
                                     </NavLink>
                                 </li>
-                                <li className=" text-blue-800">
+                                <li className=" text-blue-800 dark:text-blue-400">
                                     <NavLink to={"/profile"}>
                                         <CgProfile />  Profile
                                     </NavLink>
@@ -138,12 +150,14 @@ function NavBar() {
                 </ul>
             </div>
             <div className="navbar-end gap-3">
+
                 <div>
                     <label className="swap swap-rotate">
-                        {/* this hidden checkbox controls the state */}
-                        <input type="checkbox" className="theme-controller" value="dark" />
-
-                        {/* sun icon */}
+                        <input
+                            onChange={(e) => handleTheme(e.target.checked)}
+                            type="checkbox"
+                            defaultChecked={localStorage.getItem('theme') === "dark"}
+                            className="theme-controller" />
                         <svg
                             className="swap-off h-6 w-6 fill-current"
                             xmlns="http://www.w3.org/2000/svg"
@@ -182,8 +196,8 @@ function NavBar() {
                             className="menu  menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
                         >
                             <div className=" pb-3 border-b border-b-gray-200">
-                                <li className="text-sm font-bold text-orange-700">{user.displayName}</li>
-                                <li className="text-xs text-blue-700">{user.email}</li>
+                                <li className="text-sm font-bold text-[#fe8830]">{user.displayName}</li>
+                                <li className="text-xs text-purple-500">{user.email}</li>
                             </div>
                             <li className="mt-3">
                                 <NavLink to={"/profile"}>

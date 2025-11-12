@@ -60,14 +60,14 @@ function About() {
                         About the Platform
                     </motion.h2>
 
-                    <motion.p className="text-gray-700 leading-relaxed" variants={itemVariants}>
+                    <motion.p className="text-gray-700  dark:text-gray-400   leading-relaxed" variants={itemVariants}>
                         Welcome to <span className="font-semibold">JobConnect</span> — a
                         modern job platform where you can create, manage, and accept tasks
                         effortlessly. We connect passionate developers, designers, and
                         professionals with real-world opportunities.
                     </motion.p>
 
-                    <motion.p className="text-gray-700 leading-relaxed" variants={itemVariants}>
+                    <motion.p className="text-gray-700  dark:text-gray-400    leading-relaxed" variants={itemVariants}>
                         Post your job today or explore hundreds of listings to find your
                         next project. Whether you are an employer or freelancer, our
                         platform ensures trust, transparency, and speed.

@@ -9,7 +9,7 @@ const ButtonOne = () => {
   }
   return (
     <StyledWrapper>
-      <button type="button" className="button" onClick={() => handleBtn()}>
+      <button type="button" className="button py-3 px-4 max-sm:px-2 max-sm:py-2 " onClick={() => handleBtn()}>
         <span className="fold" />
         <div className="points_wrapper">
           <i className="point" />
@@ -51,7 +51,7 @@ const StyledWrapper = styled.div`
     border-radius: var(--round);
     border: none;
     outline: none;
-    padding: 12px 18px;
+    // padding: 12px 18px;
   }
   .button::before,
   .button::after {

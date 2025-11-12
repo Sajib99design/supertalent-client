@@ -32,7 +32,7 @@ const categories = [
 export default function TopCategories() {
     return (
         <div className="mt-20 bg-gradient-to-r from-[#632EE3]/10 to-orange-900/10 py-16 px-4">
-            <div className="mx-auto ">
+            <div className="mx-auto max-w-[1400px]">
                 <div className="md:flex justify-between items-center max-sm:text-center max-sm:mb-5">
                     <div className="md:mb-12 mb-3">
                         <h2 className="title  mb-3">

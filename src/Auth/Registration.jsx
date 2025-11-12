@@ -17,18 +17,30 @@ const Register = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    toast.loading("Creating user...", { id: "create-user" });
+    // 🔹 Password Validation
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters long!");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      toast.error("Password must contain at least one uppercase letter!");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      toast.error("Password must contain at least one lowercase letter!");
+      return;
+    }
 
+
+    toast.loading("Creating user...", { id: "create-user" });
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
         updateUserProfile(displayName, photoURL);
         toast.success("User created successfully!", { id: "create-user" });
         navigate("/auth/login");
 
       })
       .catch((error) => {
-        console.log(error);
         toast.error(error.message, { id: "create-user" });
       });
   };
@@ -38,18 +50,16 @@ const Register = () => {
     signInWithGoogle()
       .then((result) => {
         toast.success("User created successfully!", { id: "create-user" });
-        console.log(result.user);
         navigate("/");
       })
       .catch((error) => {
-        console.log(error);
         toast.error(error.message, { id: "create-user" });
       });
   };
 
   return (
-    <div className="card bg-base-100 w-full mx-auto max-w-sm ">
-      <div className="card-body  shrink-0 shadow-2xl md:border-l-2 md:border-l-blue-500 md:border-r-2 md:border-r-orange-800 mt-5">
+    <div className="card  w-full mx-auto max-w-sm ">
+      <div className="card-body dark:bg-gray-800  shrink-0 shadow-2xl md:border-l-2 md:border-l-blue-500 md:border-r-2 md:border-r-orange-800 mt-5">
 
         <h1 className="title text-center">Register</h1>
         <form onSubmit={handleRegister}>

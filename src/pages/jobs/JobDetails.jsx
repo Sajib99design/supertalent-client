@@ -13,7 +13,6 @@ const JobDetails = () => {
     const axiosInstanceSecure = useAxiosSecure();
     const { user } = useAuth();
 
-    console.log(user);
     useEffect(() => {
         axiosInstanceSecure
             .get(`/alljobs/${id}`)
@@ -53,7 +52,7 @@ const JobDetails = () => {
                 }
             })
             .catch((err) => {
-                console.error(err);
+
                 toast.error("Failed to accept the job!");
             });
     };
@@ -61,7 +60,7 @@ const JobDetails = () => {
     if (!jobData) return <p>Loading...</p>;
 
     return (
-        <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl overflow-hidden mt-8 border border-gray-200">
+        <div className="max-w-3xl mx-auto bg-white dark:bg-[#16295d] shadow-lg rounded-2xl overflow-hidden mt-8 border border-gray-200">
             {/* Cover Image */}
             <img
                 src={jobData.coverImage}
@@ -71,7 +70,7 @@ const JobDetails = () => {
 
             {/* Content */}
             <div className="p-4 sm:p-6 space-y-4">
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 capitalize">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-300 capitalize">
                     {jobData.title}
                 </h2>
 
@@ -91,10 +90,10 @@ const JobDetails = () => {
                 <hr className="my-3 border-gray-200" />
 
                 <div>
-                    <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800  dark:text-purple-500">
                         Job Summary
                     </h3>
-                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base dark:text-gray-400">
                         {jobData.summary}
                     </p>
                 </div>

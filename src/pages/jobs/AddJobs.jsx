@@ -1,7 +1,6 @@
 import React, { use, useEffect, useState } from 'react'
 import useAuth from './../../hook/useAuth';
 import useAxiosSecure from './../../hook/useAxiosSecure';
-import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
 
 
@@ -27,7 +26,7 @@ function AddJobs() {
 
         axiosInstanceSecure.post('/jobs', newJob)
             .then(data => {
-                console.log('Response:', data.data);
+
                 if (data.data.insertedId) {
                     Swal.fire({
                         position: "top-center",
@@ -40,8 +39,6 @@ function AddJobs() {
                 }
             })
             .catch(err => {
-                // console.error('Error posting job:', err);
-                // Handle error case with a different toast message
                 Swal.fire({
                     icon: "error",
                     title: "Your Job Post not send",
@@ -55,7 +52,7 @@ function AddJobs() {
 
     return (
         <div className="card  md:border-l-1 md:border-l-blue-500 md:border-r-1 md:border-r-orange-800 bg-base-100 w-full max-w-md mx-auto shadow-2xl mt-5 rounded">
-            <div className="card-body mt-3 p-6 relative">
+            <div className="card-body dark:bg-gray-800 mt-3 p-6 relative">
                 <h2 className="text-2xl font-bold title text-center mb-6">Add New Job</h2>
                 <form onSubmit={handlePostJobs} className=" newJob space-y-4">
                     {/* Title Field */}

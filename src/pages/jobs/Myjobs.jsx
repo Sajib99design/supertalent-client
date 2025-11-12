@@ -113,12 +113,12 @@ const MyJobs = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 p-4 sm:p-8 font-inter">
+        <div className="min-h-screen  p-4 sm:p-8 font-inter mx-auto max-w-[1400px]">
             <h1 className="title mb-8 text-center">
                 My Job Posts
             </h1>
 
-            <div className="overflow-x-auto bg-white shadow-2xl rounded-2xl border border-gray-200">
+            <div className="overflow-x-auto bg-white dark:bg-gray-400 shadow-2xl rounded-2xl border border-gray-200">
                 <table className="min-w-full myjobPost divide-y divide-gray-200 text-sm">
                     <thead className="bg-indigo-50">
                         <tr>
@@ -143,16 +143,16 @@ const MyJobs = () => {
                         </tr>
                     </thead>
 
-                    <tbody className="divide-y divide-gray-200">
+                    <tbody className="divide-y divide-gray-200 ">
                         {myAlljobs.map((Job, index) => (
                             <tr
                                 key={Job._id}
-                                className="bg-white hover:bg-indigo-50 transition-colors duration-150"
+                                className="bg-white dark:bg-gray-300 hover:bg-indigo-50 transition-colors duration-150"
                             >
                                 <td className="px-3 sm:px-6 py-4 whitespace-nowrap font-medium text-gray-900">
                                     {index + 1}
                                 </td>
-                                <td className="px-3 sm:px-6 py-4 whitespace-nowrap font-semibold text-orange-700">
+                                <td className="px-3 sm:px-6 py-4 whitespace-nowrap font-semibold text-orange-700 dark">
                                     {Job.title} <br />
                                     {/* {Job.summary} */}
                                 </td>

@@ -12,24 +12,23 @@ const axiosInstanceSecure = axios.create({
 
 
 const useAxiosSecure = () => {
-    const {user, signOutUser } = useAuth();
-    const navigate = useNavigate() ;
+    const { user, signOutUser } = useAuth();
+    const navigate = useNavigate();
 
     useEffect(() => {
-         // request interceptor
+        // request interceptor
         // Axios এর মাধ‌্যমে সাভারে  headers.Authorization পাঠানো হচ্ছে
         const requestInterceptor = axiosInstanceSecure.interceptors.request.use((config) => {
-            console.log(config);
             config.headers.Authorization = `Bearer ${user.accessToken}`
             return config;
         });
 
-          // response interceptor
+        // response interceptor
         // টুকেন থাকবে না তখন এই  Axios বল্ক কাজ করবে।
         const responseInterceptor = axiosInstanceSecure.interceptors.response.use(res => {
             return res;
         }, err => {
-            // console.log(err);
+         
             const status = err.status;
             if (status === 401 || status === 403) {
                 signOutUser();
@@ -39,8 +38,8 @@ const useAxiosSecure = () => {
         })
 
 
-         // unmound থেকে বের করে দিলাম
-         return () => {
+        // unmound থেকে বের করে দিলাম
+        return () => {
             axiosInstanceSecure.interceptors.request.eject(requestInterceptor)
             axiosInstanceSecure.interceptors.request.eject(responseInterceptor)
         }

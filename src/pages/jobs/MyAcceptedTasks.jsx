@@ -23,7 +23,9 @@ const MyAcceptedTasks = () => {
           setLoading(false)
         }
         )
-        .catch((err) => console.log(err));
+        .catch((err) =>  {
+      toast.error("Failed to mark as done!");
+        } );
     }
   }, [user, axiosInstanceSecure]);
 
@@ -41,7 +43,6 @@ const MyAcceptedTasks = () => {
         );
       }
     } catch (error) {
-      console.log(error);
       toast.error("Failed to mark as done!");
     }
   };
@@ -55,7 +56,7 @@ const MyAcceptedTasks = () => {
         setTasks((prev) => prev.filter((task) => task._id !== id));
       }
     } catch (error) {
-      console.log(error);
+
       toast.error("Failed to cancel!");
     }
   };
@@ -75,7 +76,7 @@ const MyAcceptedTasks = () => {
   }
 
   return (
-    <div className=" mx-auto px-4 py-10">
+    <div className="mx-auto max-w-[1400px] px-4 py-10">
       <h2 className="title text-center mb-8">
         My Accepted Jobs
       </h2>
@@ -89,7 +90,7 @@ const MyAcceptedTasks = () => {
           {tasks.map((task) => (
             <div
               key={task._id}
-              className="bg-white shadow-md   border border-gray-100 flex flex-col justify-between md:w-[32%] hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-md"
+              className="bg-white  dark:bg-[#16295d] shadow-md   border border-gray-100 flex flex-col justify-between md:w-[32%] hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-md"
             >
 
               {/* Image */}
@@ -100,7 +101,7 @@ const MyAcceptedTasks = () => {
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300 rounded-t-md"
                 />
               </figure>
-              <h3 className="text-center sub-title  text-blue-900 my-2">{task.title}</h3>
+              <h3 className="text-center sub-title  text-blue-900 dark:text-blue-500 my-2">{task.title}</h3>
 
               <div className="p-3" >
                 <div className="flex justify-between mt-4">
@@ -142,7 +143,7 @@ const MyAcceptedTasks = () => {
 
                 <button
                   onClick={() => handleCancel(task._id)}
-                  className=" text-sm  px-5 rounded-md bg-red-700 text-white font-medium hover:bg-red-600"
+                  className=" text-sm  px-5 rounded-md bg-red-700  dark:bg-gray-700  text-white font-medium hover:bg-red-600"
                 >
                   ❌ Cancel
                 </button>

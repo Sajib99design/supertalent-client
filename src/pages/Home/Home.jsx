@@ -45,15 +45,15 @@ function Home() {
 
             {/* ---------- Latest Jobs Section ---------- */}
             <section className="max-w-7xl mx-auto px-4 mt-16">
-                <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-[#632EE3] to-orange-900 bg-clip-text text-transparent">
-                    Latest Super Jobs
-                </h2>
+                    <h2 className="text-3xl font-bold text-center mb-6 title">
+                        Latest Super Jobs
+                    </h2>
 
-                <div className="grid md:grid-cols-3  gap-6 mt-10">
-                    {latestData.map((model) => (
-                        <SuperCard key={model._id} model={model} />
-                    ))}
-                </div>
+                    <div className="grid md:grid-cols-3  gap-6 mt-10">
+                        {latestData.map((model) => (
+                            <SuperCard key={model._id} model={model} />
+                        ))}
+                    </div>
             </section>
 
             {/* ---------- Top Categories Section ---------- */}

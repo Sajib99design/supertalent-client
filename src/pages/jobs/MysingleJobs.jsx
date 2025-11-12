@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 export const MysingleJobs = ({ singleJob }) => {
     const { title, coverImage, category, summary, _id, postedBy } = singleJob;
-    console.log(singleJob);
+
     return (
         <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
             <figure className="h-48 overflow-hidden">
@@ -22,7 +22,7 @@ export const MysingleJobs = ({ singleJob }) => {
                 {/* <p className="text-sm text-base-content/70">by {author}</p> */}
                 <div className="card-actions justify-between items-center mt-4">
                     <div className="flex gap-4 text-sm text-base-content/60">
-                      
+
                     </div>
                     <Link to={`/model-details/${_id}`} className="btn rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 text-white w-full btn-sm">View</Link>
                 </div>

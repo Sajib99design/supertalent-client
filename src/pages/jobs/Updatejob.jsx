@@ -99,7 +99,7 @@ function Updatejob() {
 
     return (
         <>
-            <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl overflow-hidden mt-8 border border-gray-200">
+            <div className="max-w-3xl mx-auto bg-white dark:bg-gray-400  shadow-lg rounded-2xl overflow-hidden mt-8 border border-gray-200">
                 {/* Cover Image */}
                 <img
                     src={updateData.coverImage}
@@ -148,7 +148,7 @@ function Updatejob() {
             {/* Update Modal */}
             {editingJob && (
                 <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 z-50">
-                    <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 relative">
+                    <div className="bg-white dark:bg-gray-400 rounded-xl shadow-2xl w-full max-w-md p-6 relative">
                         <button
                             onClick={() => setEditingJob(null)}
                             className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"

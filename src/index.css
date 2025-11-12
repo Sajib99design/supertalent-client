@@ -7,9 +7,14 @@
     font-family: "Poppins", sans-serif;
 }
 
+
 @plugin "daisyui" {
-    themes: light --default, dark --prefersdark, cupcake;
+    themes: light --default, dark --prefersdark;
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+
 
 @plugin "daisyui/theme" {
     name: "light";
@@ -18,7 +23,9 @@
     --color-secondary: #9F62F2;
 }
 
-;
+body {
+   @apply bg-[#f0ebfc] dark:bg-[#1d232a] 
+}
 
 .btn-primary {
     @apply bg-gradient-to-r from-[#632EE3] to-orange-900 border-none text-white transition-all duration-1000
@@ -32,7 +39,7 @@
 
 
 .title {
-    @apply md:text-3xl text-[22px] font-bold bg-gradient-to-r from-[#632EE3] to-orange-900 bg-clip-text text-transparent
+    @apply md:text-3xl text-[22px] font-bold bg-gradient-to-r from-[#632EE3]  dark:from-purple-500  to-orange-900  dark:to-orange-400  bg-clip-text text-transparent
 }
 
 .sub-title {
@@ -45,7 +52,7 @@ p {
 
 .newJob label,
 .profile label {
-    @apply font-medium text-blue-800
+    @apply font-medium text-blue-800 dark:text-gray-300
 }
 
 .newJob input {

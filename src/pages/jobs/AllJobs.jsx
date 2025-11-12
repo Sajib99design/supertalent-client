@@ -9,7 +9,6 @@ function AllJobs() {
     const [jobs, setJobs] = useState([]);
     const axiosInstance = useAxios();
 
-    console.log(loading);
     useEffect(() => {
         setLoading(true);
         axiosInstance
@@ -25,8 +24,7 @@ function AllJobs() {
 
     // 👉 handle view details
     const handleViewDetails = (id) => {
-        console.log("Clicked Job ID:", id);
-        // later: navigate(`/job/${id}`);
+
     };
 
     if (loading) {
@@ -44,7 +42,7 @@ function AllJobs() {
     }
 
     return (
-        <div className="p-5">
+        <div className="p-5 mx-auto max-w-[1400px]">
             <h2 className="title  mb-6 text-center">All Jobs</h2>
 
             {jobs.length > 0 ? (
@@ -54,7 +52,7 @@ function AllJobs() {
                             key={job._id}
                             className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 rounded-md"
                         >
-                            <div className="flex justify-between h-full bg-gray-200 flex-col">
+                            <div className="flex justify-between h-full bg-gray-200 dark:bg-gray-400  flex-col">
                                 {/* Image */}
                                 <figure className="h-48 overflow-hidden">
                                     <img
