@@ -4,6 +4,7 @@ import useAxios from "../../hook/useAxios";
 import useAuth from "../../hook/useAuth";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../../hook/useAxiosSecure";
+import { Bars } from "react-loader-spinner";
 
 const JobDetails = () => {
     const [isAccepted, setIsAccepted] = useState(false);
@@ -57,7 +58,19 @@ const JobDetails = () => {
             });
     };
 
-    if (!jobData) return <p>Loading...</p>;
+    if (!jobData) {
+        return (
+            <div className='flex justify-center items-center h-screen'><Bars
+                height="40"
+                width="40"
+                color="#4fa94d"
+                ariaLabel="bars-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+            /></div>
+        )
+    }
 
     return (
         <div className="max-w-3xl mx-auto bg-white dark:bg-[#16295d] shadow-lg rounded-2xl overflow-hidden mt-8 border border-gray-200">

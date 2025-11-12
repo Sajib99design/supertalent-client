@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 
 const axiosInstanceSecure = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "https://super-server2.vercel.app",
 });
 
 
@@ -28,7 +28,7 @@ const useAxiosSecure = () => {
         const responseInterceptor = axiosInstanceSecure.interceptors.response.use(res => {
             return res;
         }, err => {
-         
+
             const status = err.status;
             if (status === 401 || status === 403) {
                 signOutUser();

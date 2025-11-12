@@ -12,6 +12,7 @@ import JobDetails from "../pages/jobs/JobDetails";
 import MyJobs from "../pages/jobs/Myjobs";
 import MyAcceptedTasks from "../pages/jobs/MyAcceptedTasks";
 import Updatejob from "../pages/jobs/Updatejob";
+import NotFound from "../pages/404/NotFound";
 
 export const routes = createBrowserRouter([
   {
@@ -84,5 +85,10 @@ export const routes = createBrowserRouter([
         element: <Register />,
       },
     ],
+
   },
+  {
+    path: "*",
+    element: <NotFound/>
+  }
 ]);

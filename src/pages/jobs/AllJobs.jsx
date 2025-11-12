@@ -66,7 +66,7 @@ function AllJobs() {
                                 <div className="p-4 space-y-3 ">
                                     <h3 className="text-center sub-title  text-blue-900">{job.title}</h3>
                                     <div className="flex justify-between my-5 border-b-1 border-blue-200 pb-3">
-                                        <span className="text-sm text-secondary ">{job.postedBy}</span>
+                                        <span className="text-sm text-orange-800">{job.postedBy}</span>
                                         <p className="text-orange-800 text-sm">{job.category}</p>
                                     </div>
                                     {/* Summary (limited text) */}

@@ -103,18 +103,18 @@ function NavBar() {
             </div>
             <div className=" hidden lg:flex my-3">
                 <ul className="menu menu-horizontal px-1">
-                    <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
+                    <li className="border-e-1 border-blue-300 text-blue-800 dark:text-gray-300">
                         <NavLink to={"/"}>
                             <GoHomeFill />
                             Home
                         </NavLink>
                     </li>
-                    <li className="border-e-1 border-blue-300 text-blue-800  dark:text-blue-400">
+                    <li className="border-e-1 border-blue-300 text-blue-800  dark:text-gray-300">
                         <NavLink to="/all-jobs">
                             <Briefcase size={14} /> All Jobs
                         </NavLink>
                     </li>
-                    <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
+                    <li className="border-e-1 border-blue-300 text-blue-800 dark:text-gray-300">
                         <NavLink to="/auth/register">
                             <IoPersonAddSharp size={14} /> Register
                         </NavLink>
@@ -123,22 +123,22 @@ function NavBar() {
                         user && (
                             <>
 
-                                <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
+                                <li className="border-e-1 border-blue-300 text-blue-800 dark:text-gray-300">
                                     <NavLink to="/add-jobs">
                                         <Plus size={15} />  Add Jobs
                                     </NavLink>
                                 </li>
-                                <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
+                                <li className="border-e-1 border-blue-300 text-blue-800 dark:text-gray-300">
                                     <NavLink to="/myjobs">
                                         <ImBoxAdd /> My Jobs
                                     </NavLink>
                                 </li >
-                                <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
+                                <li className="border-e-1 border-blue-300 text-blue-800 dark:text-gray-300">
                                     <NavLink to="/myacceptedjobs">
                                         <LucidePackageCheck size={16} /> My Accepted Jobs
                                     </NavLink>
                                 </li>
-                                <li className=" text-blue-800 dark:text-blue-400">
+                                <li className=" text-blue-800 dark:text-gray-300">
                                     <NavLink to={"/profile"}>
                                         <CgProfile />  Profile
                                     </NavLink>
