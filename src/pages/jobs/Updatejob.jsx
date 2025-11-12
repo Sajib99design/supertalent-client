@@ -137,7 +137,7 @@ function Updatejob() {
                     <div className="pt-4">
                         <button
                             onClick={() => handleUpdatePost(updateData)}
-                            className="px-3 py-1.5 text-xs rounded-md text-white bg-blue-700 hover:bg-blue-500 flex items-center gap-1"
+                            className="px-3 py-1.5 text-xs rounded-full hover:opacity-70 text-white btn btn-primary w-full flex items-center gap-1"
                         >
                             <Edit3 className="w-3.5 h-3.5" /> Modify
                         </button>

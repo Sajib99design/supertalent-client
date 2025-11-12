@@ -21,28 +21,30 @@
 ;
 
 .btn-primary {
-    @apply bg-gradient-to-r from-[#632EE3] to-orange-900   border-none text-white transition-all duration-1000
+    @apply bg-gradient-to-r from-[#632EE3] to-orange-900 border-none text-white transition-all duration-1000
 }
 
 .btn-primary:hover {
-    @apply bg-gradient-to-l  to-[#632EE3]   from-orange-900 ;
-  }
+    @apply bg-gradient-to-l to-[#632EE3] from-orange-900;
+}
 
 
 
 
 .title {
-    @apply md:text-3xl text-[22px] font-bold  bg-gradient-to-r from-[#632EE3] to-orange-900 bg-clip-text text-transparent
+    @apply md:text-3xl text-[22px] font-bold bg-gradient-to-r from-[#632EE3] to-orange-900 bg-clip-text text-transparent
 }
 
 .sub-title {
     @apply md:text-xl text-lg font-semibold
 }
+
 p {
     font-family: "Roboto", sans-serif;
 }
 
-.newJob label, .profile label {
+.newJob label,
+.profile label {
     @apply font-medium text-blue-800
 }
 
@@ -53,6 +55,19 @@ p {
 select option {
     @apply text-orange-800
 }
-.myjobPost th{
+
+.myjobPost th {
     @apply px-3 sm:px-6 py-3 text-left font-bold text-indigo-800 uppercase tracking-wider
+}
+
+.footerSend {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(233, 233, 233);
+}
+
+.footerSend:hover {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(6, 6, 93)
 }
