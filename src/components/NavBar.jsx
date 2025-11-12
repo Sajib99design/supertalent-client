@@ -27,7 +27,8 @@ function NavBar() {
 
     return (
         <div className="navbar max-w-[1400px] mx-auto py-0 min-h-0 z-1 shadow-sm  glass-card">
-            <div className="navbar-start">
+            <div className=" flex justify-between items-center w-full">
+            <div className="flex items-center max-sm:justify-between  max-sm:w-[80%]">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
@@ -96,11 +97,11 @@ function NavBar() {
                         </li>
                     </ul>
                 </div>
-                <Link to={"/"} className="flex items-center gap-1 text-xl font-bold">
+                <Link to={"/"} className="max-sm:mx-auto">
                     <img src={Logo} alt="" className="w-[140px]" />
                 </Link>
             </div>
-            <div className="navbar-center hidden lg:flex my-3">
+            <div className=" hidden lg:flex my-3">
                 <ul className="menu menu-horizontal px-1">
                     <li className="border-e-1 border-blue-300 text-blue-800 dark:text-blue-400">
                         <NavLink to={"/"}>
@@ -149,8 +150,7 @@ function NavBar() {
 
                 </ul>
             </div>
-            <div className="navbar-end gap-3">
-
+            <div className="flex gap-3 items-center">
                 <div>
                     <label className="swap swap-rotate">
                         <input
@@ -242,6 +242,7 @@ function NavBar() {
                         <IoLogIn /> Login
                     </Link>
                 )}
+            </div>
             </div>
         </div>
     );
