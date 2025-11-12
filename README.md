@@ -12,7 +12,7 @@ It connects talented professionals with employers by allowing users to **post, b
 
 #  Live Preview 🌸
 - Client-netlify:   https://super-talent-client.netlify.app
-- Client-vercel:  https://super-client-five.vercel.app
+- Client-netlify:   https://supertalent.netlify.app
 - Server:  https://super-server-mu.vercel.app
 
 
