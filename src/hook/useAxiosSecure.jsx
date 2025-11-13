@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 
 const axiosInstanceSecure = axios.create({
-    baseURL: "https://super-server-mu.vercel.app",
+    baseURL: "https://super-server-3.onrender.com",
 });
 
 
